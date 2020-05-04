@@ -1,0 +1,16 @@
+name: Lint
+
+on: pull_request
+
+jobs:
+  lint:
+    name: Lint
+    runs-on: ubuntu-18.04
+    steps:
+      - name: Comment to README
+        run: |
+          file=.github/workflows/lint.yaml
+          line=3
+          col=1
+          message="This is test."
+          echo "::error file=${file},line=${line},col=${col}::${message}"
